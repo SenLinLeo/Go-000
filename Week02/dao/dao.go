@@ -1,5 +1,9 @@
 package dao
 
+import "database/sql"
+
 func Dao() error {
-	return nil
+	// if no error return nil
+	// has error return sqlerror
+	return sql.ErrNoRows
 }

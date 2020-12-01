@@ -19,12 +19,12 @@ type user struct {
 func Biz() error {
 	u := &user{age: 30, name: "Li Ming"}
 	err := dao.Dao()
-	if err != nil {
-		return err
-	}
+	// if err != nil {
+	//	return err
+	// }
 
 	if u.age <= AgeLimit {
-		return errors.Wrap(ServiceErr, "The age too old.")
+		return errors.Wrap(err, "The age too old.")
 
 	}
 
