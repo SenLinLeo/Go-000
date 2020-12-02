@@ -12,16 +12,16 @@ var ServiceErr = errors.New("Service not found")
 const AgeLimit = 30
 
 type user struct {
-	name string
 	age  int
+	name string
 }
 
 func Biz() error {
 	u := &user{age: 30, name: "Li Ming"}
 	err := dao.Dao()
-	// if err != nil {
-	//	return err
-	// }
+	if err != nil {
+		return err
+	}
 
 	if u.age <= AgeLimit {
 		return errors.Wrap(err, "The age too old.")
